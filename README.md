@@ -5,7 +5,6 @@
 **A peer-to-peer chat application with STUN-based discovery, direct TCP messaging, and file transfer.**
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Docker](https://img.shields.io/badge/Docker-Supported-2496ED.svg)
 ![Tests](https://img.shields.io/badge/Tests-pytest-orange.svg)
 
