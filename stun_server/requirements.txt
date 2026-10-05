@@ -1,0 +1,3 @@
+# STUN Server dependencies
+# (Redis is optional; server falls back to in-memory if unavailable)
+redis>=5.0.0

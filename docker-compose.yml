@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  stun-server:
+    build: ./stun_server
+    container_name: stun_server
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    environment:
+      - USE_REDIS=true
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+  peer1:
+    build: ./peer
+    container_name: peer1
+    depends_on:
+      - stun-server
+    stdin_open: true
+    tty: true
+    environment:
+      - USERNAME=alice
+      - STUN_URL=http://stun-server:8000
+      - TCP_PORT=5001
+
+  peer2:
+    build: ./peer
+    container_name: peer2
+    depends_on:
+      - stun-server
+    stdin_open: true
+    tty: true
+    environment:
+      - USERNAME=bob
+      - STUN_URL=http://stun-server:8000
+      - TCP_PORT=5002
