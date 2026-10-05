@@ -108,7 +108,7 @@ NET-Project/
 
 ```bash
 # 1. Clone
-git clone https://github.com/YOUR_USERNAME/p2p-chat.git
+git clone https://github.com/Frshtem82/p2p-chat.git
 cd p2p-chat
 
 # 2. (Optional) Install extras
